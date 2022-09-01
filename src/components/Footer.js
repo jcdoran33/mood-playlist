@@ -27,4 +27,5 @@ function Footer() {
 
 };
 
+//export component 'Footer'
 export default Footer;
