@@ -14,7 +14,9 @@ const generatePlaylist = () => {
   console.log("TEST: generatePlaylist function has been called");
   //define DOM elements
   const generateBtn = document.querySelector("#generate-btn");
-  const moodForm = document.querySelector("#mood-form");
+  const moodForm = document.querySelector("#mood-select");
+  const moodFormValue = moodForm.value;
+    // console.log("TEST: value of moodForm: ", moodFormValue);
   //API call starts here
   //define URL string
   const apiBaseURL = "https://api.spotify.com/v1";
@@ -24,7 +26,7 @@ const generatePlaylist = () => {
 
 
 function App() {
-  console.log("test for gen playlist: ", generatePlaylist);
+  // console.log("test for gen playlist: ", generatePlaylist);
   return (
     <div className="App">
       <Header />

@@ -14,17 +14,6 @@ import React from 'react';
 
 
 function MoodSelector(props) {
-    // const generatePlaylist = () => {
-    //     console.log("TEST: generatePlaylist function has been called");
-    //     //define DOM elements
-    //     const generateBtn = document.querySelector("#generate-btn");
-    //     const moodForm = document.querySelector("#mood-form");
-    //     //API call starts here
-    //     //define URL string
-    //     const apiBaseURL = "https://api.spotify.com/v1";
-    //     //make fetch API call
-    
-    // };
 
     return (
         <div className="mood-selector">
@@ -34,7 +23,7 @@ function MoodSelector(props) {
             
             <form id="mood-form">
             
-            <select className="form-select" aria-label="Default select example" form="mood-form">
+            <select id="mood-select" className="form-select" aria-label="Default select example" form="mood-form">
                 <option defaultValue>Choose a mood...</option>
                 <option value="Euphoric">Euphoric</option>
                 <option value="Somber">Somber</option>
