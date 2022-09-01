@@ -11,15 +11,20 @@ import React from 'react';
 //     //when clicked, replace innerHTML or text of drop down with the dropdownSelection.value
 // };
 
-const generatePlaylist = () => {
-    //define DOM elements
-    const generateBtn = document.querySelector("#generate-btn");
-    const moodForm = document.querySelector("#mood-form");
-    //API call goes in here
 
-};
 
-function MoodSelector(dropdownTextReplace) {
+function MoodSelector(props) {
+    // const generatePlaylist = () => {
+    //     console.log("TEST: generatePlaylist function has been called");
+    //     //define DOM elements
+    //     const generateBtn = document.querySelector("#generate-btn");
+    //     const moodForm = document.querySelector("#mood-form");
+    //     //API call starts here
+    //     //define URL string
+    //     const apiBaseURL = "https://api.spotify.com/v1";
+    //     //make fetch API call
+    
+    // };
 
     return (
         <div className="mood-selector">
@@ -38,7 +43,7 @@ function MoodSelector(dropdownTextReplace) {
                 {/* <input type="submit"/> */}
             </form>
 
-            <button id="generate-btn" onClick={(e) => this.generatePlaylist}>Generate Playlist</button>
+            <button id="generate-btn" onClick={(e) => props.generatePlaylist()}>Generate Playlist</button>
 
         </div>
     )

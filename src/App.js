@@ -8,12 +8,28 @@ import PlaylistDisplay from './components/PlaylistDisplay';
 //import custom CSS
 import './App.css';
 
+
+//test - define generatePlaylist function
+const generatePlaylist = () => {
+  console.log("TEST: generatePlaylist function has been called");
+  //define DOM elements
+  const generateBtn = document.querySelector("#generate-btn");
+  const moodForm = document.querySelector("#mood-form");
+  //API call starts here
+  //define URL string
+  const apiBaseURL = "https://api.spotify.com/v1";
+  //make fetch API call
+
+};
+
+
 function App() {
+  console.log("test for gen playlist: ", generatePlaylist);
   return (
     <div className="App">
       <Header />
 
-      <MoodSelector />
+      <MoodSelector generatePlaylist={generatePlaylist}/>
 
       <Footer />
     </div>
