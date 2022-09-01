@@ -21,7 +21,13 @@ const generatePlaylist = () => {
   //define URL string
   const apiBaseURL = "https://api.spotify.com/v1";
   //make fetch API call
-
+  fetch(apiBaseURL, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '
+    }
+  })
 };
 
 
