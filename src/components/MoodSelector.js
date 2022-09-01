@@ -1,25 +1,40 @@
 //import React
 import React from 'react';
 
-function MoodSelector() {
+// const dropdownTextReplace = function () {
+//     console.log("dropdownTextReplace function launched ");
+//     //define DOM elements
+//     const dropdown = document.querySelector(".form-select");
+//     const dropdownSelection = document.querySelector("#mood-form");
+//     //actions
+//     dropdown.innerHTML = dropdownSelection.value;
+//     //when clicked, replace innerHTML or text of drop down with the dropdownSelection.value
+// };
+
+const generatePlaylist = () => {
+    //API call goes in here
+};
+
+function MoodSelector(dropdownTextReplace) {
 
     return (
         <div className="mood-selector">
             <div className="mood-header">
                 <h3>Select your mood...</h3>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="index.html">Euphoric</a>
-                    <a class="dropdown-item" href="index.html">Pensive</a>
-                    <a class="dropdown-item" href="index.html">Funky</a>
-                </div>
-            </div>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+            {/* <label for="pet-select">Choose a pet:</label> <br/> */}
+            <form id="mood-form">
+            
+            <select className="form-select" aria-label="Default select example" form="mood-form">
+                <option defaultValue>Choose a mood...</option>
+                <option value="Euphoric">Euphoric</option>
+                <option value="Somber">Somber</option>
+                <option value="Jazzy">Jazzy</option>
+            </select>
+                {/* <input type="submit"/> */}
+            </form>
+            <button onClick={(e) => this.generatePlaylist}>Generate Playlist</button>
+
         </div>
     )
 }
