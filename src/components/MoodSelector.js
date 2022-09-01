@@ -12,7 +12,11 @@ import React from 'react';
 // };
 
 const generatePlaylist = () => {
+    //define DOM elements
+    const generateBtn = document.querySelector("#generate-btn");
+    const moodForm = document.querySelector("#mood-form");
     //API call goes in here
+
 };
 
 function MoodSelector(dropdownTextReplace) {
@@ -22,7 +26,7 @@ function MoodSelector(dropdownTextReplace) {
             <div className="mood-header">
                 <h3>Select your mood...</h3>
             </div>
-            {/* <label for="pet-select">Choose a pet:</label> <br/> */}
+            
             <form id="mood-form">
             
             <select className="form-select" aria-label="Default select example" form="mood-form">
@@ -33,7 +37,8 @@ function MoodSelector(dropdownTextReplace) {
             </select>
                 {/* <input type="submit"/> */}
             </form>
-            <button onClick={(e) => this.generatePlaylist}>Generate Playlist</button>
+
+            <button id="generate-btn" onClick={(e) => this.generatePlaylist}>Generate Playlist</button>
 
         </div>
     )
