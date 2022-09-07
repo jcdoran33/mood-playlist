@@ -44,11 +44,12 @@ function App() {
       const response = await fetch('/auth/token');
       const json = await response.json();
       setToken(json.access_token);
+      console.log('Test json.access_token: ', json.access_token) //this access_token should not be coming back as ''
     }
-
+    
     getToken();
   }, []);
-
+  
   return (
     <div className="App">
       <Header />
@@ -56,6 +57,7 @@ function App() {
       <MoodSelector generatePlaylist={generatePlaylist} />
 
       {(token === '') ? <Login /> : <WebPlayback token={token} />}
+      {console.log('Token test: ', token)}
 
       <Footer />
     </div>
