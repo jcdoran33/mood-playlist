@@ -18,7 +18,7 @@ const generatePlaylist = () => {
   const generateBtn = document.querySelector("#generate-btn");
   const moodForm = document.querySelector("#mood-select");
   const moodFormValue = moodForm.value;
-  // console.log("TEST: value of moodForm: ", moodFormValue);
+  console.log("TEST: value of moodForm: ", moodFormValue);
   //API call starts here
   //define URL string
   // const apiBaseURL = "https://api.spotify.com/v1";

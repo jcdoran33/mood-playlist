@@ -2,11 +2,12 @@
 //require/import express, dotenv packages
 const express = require('express');
 const dotenv = require('dotenv');
-const router = express.Router(); //unsure if this line is needed yet
-//probably need to require request package here, define as = to request
+//require request package here, define as = to request
 const request = require('request');
 
 const PORT = 5000;
+
+global.access_token = '';
 
 dotenv.config();
 
@@ -30,9 +31,21 @@ var generateRandomString = function (length) {
 
 const app = express();
 
-//define routes
+//define routes below ==========
+//route below for implementing user authentication REQUEST
 app.get('/auth/login', (req, res) => {
+    var scope = "streaming user-read-email user-read-private"
+  var state = generateRandomString(16);
 
+  var auth_query_parameters = new URLSearchParams({
+    response_type: "code",
+    client_id: spotify_client_id,
+    scope: scope,
+    redirect_uri: spotify_redirect_uri,
+    state: state
+  })
+
+  res.redirect('https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
 });
 
 app.get('/auth/callback', (req, res) => {
@@ -60,25 +73,6 @@ app.get('/auth/callback', (req, res) => {
     });
 });
 
-//route below for implementing user authentication REQUEST
-router.get('/auth/login', (req, res) => {
-
-    var scope = "streaming \
-                 user-read-email \
-                 user-read-private"
-
-    var state = generateRandomString(16);
-
-    var auth_query_parameters = new URLSearchParams({
-        response_type: "code",
-        client_id: spotify_client_id,
-        scope: scope,
-        redirect_uri: "http://localhost:3000/auth/callback",
-        state: state
-    })
-
-    res.redirect('https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
-});
 
 //route to return the access token in JSON format
 app.get('/auth/token', (req, res) => {
