@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import MoodSelector from './components/MoodSelector';
 import PlaylistDisplay from './components/PlaylistDisplay';
 import WebPlayback from './components/WebPlayback'; //added based off tutorial component
+import Login from './components/Login'; //added for Login / auth process based off tutorial
 //import custom CSS
 import './App.css';
 

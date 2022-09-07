@@ -1,5 +1,11 @@
+//replace my code with the below code from Spotify example repo
+
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 module.exports = function (app) {
-    app.use(proxy(`/auth/**`, { 
-        target: 'http://localhost:5000' 
-    }));
+    app.use('/auth/**', 
+        createProxyMiddleware({ 
+            target: 'http://localhost:5000'
+        })
+    );
 };
